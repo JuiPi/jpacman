@@ -43,16 +43,17 @@ public class MapParserTest {
         mapParser.parseMap(map);
 
         // Expected number of elements
-        final int EXPECTED_GHOSTS = 1;
-        final int EXPECTED_WALLS = 26;  // 12 + 2 + 12
-        final int EXPECTED_GROUNDS = 10; // P, G, and 8 spaces
-        final int EXPECTED_PELLETS = 0;  // '.' not present
+        final int expectedGhosts = 1;
+        final int expectedWalls = 26;  // 12 + 2 + 12
+        final int expectedGrounds = 10; // P, G, and 8 spaces
+        final int expectedPellets = 0;  // '.' not present
+
 
         // Verification
-        Mockito.verify(levelFactory, Mockito.times(EXPECTED_GHOSTS)).createGhost();
-        Mockito.verify(boardFactory, Mockito.times(EXPECTED_WALLS)).createWall();
-        Mockito.verify(boardFactory, Mockito.times(EXPECTED_GROUNDS)).createGround();
-        Mockito.verify(levelFactory, Mockito.times(EXPECTED_PELLETS)).createPellet();
+        Mockito.verify(levelFactory, Mockito.times(expectedGhosts)).createGhost();
+        Mockito.verify(boardFactory, Mockito.times(expectedWalls)).createWall();
+        Mockito.verify(boardFactory, Mockito.times(expectedGrounds)).createGround();
+        Mockito.verify(levelFactory, Mockito.times(expectedPellets)).createPellet();
     }
 
 }
