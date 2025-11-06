@@ -7,14 +7,14 @@ import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 /**
- * test class for board
+ * test class for board.
  */
 public class BoardTest {
     private Board board;
     private BasicSquare square;
 
     /**
-     * setup
+     * setup.
      */
     @BeforeEach
     public void setup() {
@@ -24,7 +24,7 @@ public class BoardTest {
     }
 
     /**
-     * test the board creation validity
+     * test the board creation validity.
      */
     @Test
     void testBoardSizeOne() {
@@ -43,7 +43,7 @@ public class BoardTest {
     }
 
     /**
-     * test null square
+     * test null square.
      * @throws AssertionError
      */
     @Test

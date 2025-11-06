@@ -21,7 +21,7 @@ public class DirectionTest {
     }
 
     /**
-     * Test south direction
+     * Test south direction.
      */
     @Test
     void testSouth() {
@@ -30,7 +30,7 @@ public class DirectionTest {
     }
 
     /**
-     * Test west direction
+     * Test west direction.
      */
     @Test
     void testWest() {
@@ -39,7 +39,7 @@ public class DirectionTest {
     }
 
     /**
-     * Test east direction
+     * Test east direction.
      */
     @Test
     void testEast() {

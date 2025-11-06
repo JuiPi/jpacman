@@ -26,6 +26,11 @@ public class MapParserTest {
     @Mock
     private Blinky blinky;
 
+    final int EXPECTED_GHOSTS = 1;
+    final int EXPECTED_WALLS = 26;  // 12 + 2 + 12
+    final int EXPECTED_GROUNDS = 10; // P, G, and 8 spaces
+    final int EXPECTED_PELLETS = 0;  // '.' not present
+
     /**
      * Test for the parseMap method (good map).
      */
