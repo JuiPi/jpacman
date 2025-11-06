@@ -44,13 +44,13 @@ class OccupantTest {
     @Test
     void testOccupy() {
         // Remove the following placeholder:
-        Square square = new BasicSquare();
+        Square squaree = new BasicSquare();
 
-        unit.occupy(square);
+        unit.occupy(squaree);
 
         assertThat(unit.hasSquare()).isTrue();
-        assertThat(unit.getSquare()).isEqualTo(square);
-        assertThat(square.getOccupants()).contains(unit);
+        assertThat(unit.getSquare()).isEqualTo(squaree);
+        assertThat(squaree.getOccupants()).contains(unit);
     }
 
     /**
