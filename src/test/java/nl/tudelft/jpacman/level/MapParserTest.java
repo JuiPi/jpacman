@@ -26,11 +26,6 @@ public class MapParserTest {
     @Mock
     private Blinky blinky;
 
-    final int EXPECTED_GHOSTS = 1;
-    final int EXPECTED_WALLS = 26;  // 12 + 2 + 12
-    final int EXPECTED_GROUNDS = 10; // P, G, and 8 spaces
-    final int EXPECTED_PELLETS = 0;  // '.' not present
-
     /**
      * Test for the parseMap method (good map).
      */
@@ -47,17 +42,17 @@ public class MapParserTest {
         map.add("############");
         mapParser.parseMap(map);
 
-        // Verification for Ghost creation (requested by user)
-        Mockito.verify(levelFactory, Mockito.times(1)).createGhost();
+        // Expected number of elements
+        final int EXPECTED_GHOSTS = 1;
+        final int EXPECTED_WALLS = 26;  // 12 + 2 + 12
+        final int EXPECTED_GROUNDS = 10; // P, G, and 8 spaces
+        final int EXPECTED_PELLETS = 0;  // '.' not present
 
-        // Verify Wall creation ('#' is present 12 + 2 + 12 = 26 times)
-        Mockito.verify(boardFactory, Mockito.times(26)).createWall();
-
-        // Verify Ground creation (10 non-wall tiles: P, G, and 8 spaces)
-        Mockito.verify(boardFactory, Mockito.times(10)).createGround();
-
-        // Verify Pellet creation (Pellet '.' is not present)
-        Mockito.verify(levelFactory, Mockito.times(0)).createPellet();
+        // Verification
+        Mockito.verify(levelFactory, Mockito.times(EXPECTED_GHOSTS)).createGhost();
+        Mockito.verify(boardFactory, Mockito.times(EXPECTED_WALLS)).createWall();
+        Mockito.verify(boardFactory, Mockito.times(EXPECTED_GROUNDS)).createGround();
+        Mockito.verify(levelFactory, Mockito.times(EXPECTED_PELLETS)).createPellet();
     }
 
 }
