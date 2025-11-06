@@ -6,10 +6,16 @@ import org.junit.jupiter.api.Test;
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
+/**
+ * test class for board
+ */
 public class BoardTest {
     private Board board;
     private BasicSquare square;
 
+    /**
+     * setup
+     */
     @BeforeEach
     public void setup() {
         square = new BasicSquare();
@@ -17,6 +23,9 @@ public class BoardTest {
         board = new Board(grid);
     }
 
+    /**
+     * test the board creation validity
+     */
     @Test
     void testBoardSizeOne() {
         // Board should not be null
@@ -33,6 +42,10 @@ public class BoardTest {
         assertThat(board.getHeight()).isEqualTo(1);
     }
 
+    /**
+     * test null square
+     * @throws AssertionError
+     */
     @Test
     void testBoardWithNullSquare() {
         // Create a board grid with a null square
